@@ -37,6 +37,18 @@ app.use('/api/public', publicRoutes);
 app.use('/api/upload', uploadRoutes);
 app.use('/api/ads', adRoutes);
 
+// Production: serve built React client
+const clientDist = path.join(__dirname, '../client/dist');
+app.use(express.static(clientDist));
+app.get('*', (req, res, next) => {
+  if (req.path.startsWith('/api') || req.path.startsWith('/uploads')) {
+    return next();
+  }
+  res.sendFile(path.join(clientDist, 'index.html'), (err) => {
+    if (err) next();
+  });
+});
+
 app.use(notFound);
 app.use(errorHandler);
 
