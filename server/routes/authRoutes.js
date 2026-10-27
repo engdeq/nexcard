@@ -1,13 +1,11 @@
 import { Router } from 'express';
 import rateLimit from 'express-rate-limit';
 import {
-  register,
   login,
   me,
   logout,
   updateProfile,
   changePassword,
-  registerValidation,
   loginValidation,
   updateProfileValidation,
   changePasswordValidation,
@@ -25,7 +23,13 @@ const authLimiter = rateLimit({
   legacyHeaders: false,
 });
 
-router.post('/register', authLimiter, registerValidation, validate, register);
+// Public registration is disabled
+router.post('/register', authLimiter, (_req, res) => {
+  res.status(403).json({
+    success: false,
+    message: 'Registration is closed. Please contact the administrator.',
+  });
+});
 router.post('/login', authLimiter, loginValidation, validate, login);
 router.get('/me', protect, me);
 router.post('/logout', logout);

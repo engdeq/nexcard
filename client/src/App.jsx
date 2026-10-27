@@ -5,7 +5,6 @@ import ProtectedRoute from './components/ProtectedRoute';
 import AppLayout from './layouts/AppLayout';
 import Landing from './pages/Landing';
 import Login from './pages/Login';
-import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
 import CreateQR from './pages/CreateQR';
 import MyQRCodes from './pages/MyQRCodes';
@@ -23,9 +22,9 @@ export default function App() {
         <BrowserRouter>
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/p/:slug" element={<PublicProfile />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Navigate to="/login" replace />} />
+          <Route path="/p/:slug" element={<PublicProfile />} />
 
             <Route element={<ProtectedRoute />}>
               <Route path="/app" element={<AppLayout />}>

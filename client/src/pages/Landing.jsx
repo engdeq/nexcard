@@ -15,12 +15,7 @@ export default function Landing() {
         <Logo showTagline />
         <div className="flex items-center gap-2">
           <Link to="/login">
-            <Button variant="ghost" size="sm">
-              Login
-            </Button>
-          </Link>
-          <Link to="/register">
-            <Button size="sm">Register now</Button>
+            <Button size="sm">Login</Button>
           </Link>
         </div>
       </header>
@@ -39,13 +34,8 @@ export default function Landing() {
               digital business profiles in minutes.
             </p>
             <div className="mt-6 flex flex-wrap gap-2">
-              <Link to="/register">
-                <Button variant="white">Get started free</Button>
-              </Link>
               <Link to="/login">
-                <Button className="border border-white/30 bg-transparent text-white hover:bg-white/10">
-                  Login
-                </Button>
+                <Button variant="white">Login</Button>
               </Link>
             </div>
           </div>

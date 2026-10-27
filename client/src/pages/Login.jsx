@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
-import { Link, Navigate, useNavigate } from 'react-router-dom';
+import { Navigate, useNavigate } from 'react-router-dom';
 import { Alert, Button, Card } from '../components/ui';
 import { Logo } from '../components/Logo';
 import { SiteFooter } from '../components/SiteFooter';
@@ -86,10 +86,7 @@ export default function Login() {
               </Button>
             </form>
             <p className="mt-5 text-center text-sm text-white/70">
-              No account?{' '}
-              <Link to="/register" className="font-semibold text-white underline">
-                Register now
-              </Link>
+              Registration is closed. Contact your administrator for access.
             </p>
           </Card>
         </div>

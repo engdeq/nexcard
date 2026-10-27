@@ -17,9 +17,6 @@ export function SiteFooter() {
         <div>
           <p className="text-sm font-semibold text-text">Product</p>
           <div className="mt-3 flex flex-col gap-2 text-sm text-muted">
-            <Link to="/register" className="hover:text-primary">
-              Get started
-            </Link>
             <Link to="/login" className="hover:text-primary">
               Login
             </Link>
